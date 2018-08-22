@@ -69,7 +69,7 @@ public class AntiDragPlugin extends Plugin implements KeyListener
 	@Override
 	protected void shutDown() throws Exception
 	{
-		client.setInventoryDragDelay(DEFAULT_DELAY);
+//		client.setInventoryDragDelay(DEFAULT_DELAY);
 		keyManager.unregisterKeyListener(this);
 	}
 
@@ -86,23 +86,27 @@ public class AntiDragPlugin extends Plugin implements KeyListener
 		{
 			client.setInventoryDragDelay(config.dragDelay());
 		}
+		else if (e.getKeyCode() == KeyEvent.VK_CONTROL)
+		{
+			client.setInventoryDragDelay(DEFAULT_DELAY);
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_SHIFT)
-		{
-			client.setInventoryDragDelay(DEFAULT_DELAY);
-		}
+//		if (e.getKeyCode() == KeyEvent.VK_SHIFT)
+//		{
+//			client.setInventoryDragDelay(DEFAULT_DELAY);
+//		}
 	}
 
 	@Subscribe
 	public void onFocusChanged(FocusChanged focusChanged)
 	{
-		if (!focusChanged.isFocused())
-		{
-			client.setInventoryDragDelay(DEFAULT_DELAY);
-		}
+//		if (!focusChanged.isFocused())
+//		{
+//			client.setInventoryDragDelay(DEFAULT_DELAY);
+//		}
 	}
 }

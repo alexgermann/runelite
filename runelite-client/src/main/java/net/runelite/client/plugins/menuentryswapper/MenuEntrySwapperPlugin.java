@@ -489,6 +489,10 @@ public class MenuEntrySwapperPlugin extends Plugin
 		{
 			swap("empty", option, target, true);
 		}
+		else if (option.contains("board") && target.contains("cart"))
+		{
+			swap("pay", option, target, false);
+		}
 	}
 
 	@Subscribe
